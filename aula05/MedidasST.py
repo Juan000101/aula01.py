@@ -15,5 +15,5 @@ areaTrapezio = ((medidaA + medidaC) * medidaC) /2
 #saida de dados 
 st.markdown("<h2 style='text-align: left;'>resultados:</h2>", unsafe_allow_html=True)
 st.write(f"A área do quadrado é: {areaQuadrado:.4f}")
-st.write(f"A área do triângulo é: {areaTriangulo:.4f}")
+st.write(f"A área do triângulo é: {areaTringulo:.4f}") # CORRIGIDO: de areaTriangulo para areaTringulo
 st.write(f"A área do trapézio é: {areaTrapezio:.4f}")
