@@ -32,4 +32,3 @@ if botao is True:
                 st.session_state.tentativas += 1
                 st.warning(f"Credenciais invalaidas. Tentativa {st.session_state.tentativas} de {MAXIMO_TENTATIVAS}")
                 break
-            
