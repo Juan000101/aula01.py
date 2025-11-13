@@ -65,7 +65,13 @@ resultado_layout = [
 resultado_janela = sg.Window("Resultado", resultado_layout)
 
 while True:
-    evento = resultado_janela.read()
-    if evento == sg.WINDOW_CLOSED or evento == "Fechar":
+    eventoResultado = resultado_janela.read()
+    print(eventoResultado)
+    if eventoResultado == sg.WIN_CLOSED or "Fechar" in eventoResultado:
+        resultado_janela.close()
+        print("entrei if")
         break
 resultado_janela.close()
+
+if __name__ == "__main__":
+    main()
