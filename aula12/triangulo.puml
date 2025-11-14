@@ -1,0 +1,9 @@
+@startuml triangulo
+    class triangulo
+    {
+       + a:int
+       + b:int
+       + c:int 
+       + area(): float
+    }
+@enduml

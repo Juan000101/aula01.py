@@ -1,0 +1,10 @@
+@startuml
+class produto: {
+    + nome :str 
+    + preco : float 
+    + saldo : int 
+    + valorEmEstoque(): float 
+    + adicionarProdutos(): int 
+    + removerProdutos(): int 
+}
+@enduml
