@@ -15,12 +15,12 @@ class produto:
 p1 = p.produto()  #instanciar o objeto
 #entrada de dados
 print("Digite os dados do produto")
-p1.nome = input("\tNome")
+p1.nome = str(input("\tNome:"))
 p1.preco = float(input("\tPreco:R$"))
-p1.saldo = int(input("\quantidade:"))
+p1.saldo = int(input("\tQuantidade:"))
 #saida de dados
-print("Dados do produto")
-print(f"\tNome do produto: {p1.nome}")
-print(f"\tValor de comopra: R$ {p1.preco})")
-print(f"\tQuantidade em estoque: {p1.saldo}")
-print(f"Valor total em estoque: R$ {p1.ValorTotalEmEstoque():.2f}") 
+print(p1.dadosDoProduto())
+q = int(input("Digite o numero de produtos a ser adicionado ao estoque:"))
+p1.AdicionarProdutos(q)
+print("--Dados autualizado--")
+print(p1.dadosDoProduto())
