@@ -1,7 +1,6 @@
 import streamlit as st
 
 def calcular_estatisticas(lista_pessoas):
-    """Calcula média e porcentagem usando apenas Python puro."""
     if not lista_pessoas:
         return 0, 0, []
 
@@ -17,8 +16,7 @@ def calcular_estatisticas(lista_pessoas):
 def main():
     st.title("Processamento de Dados de Pessoas (Streamlit Simples)")
 
-    # --- Inicialização do Estado da Sessão ---
-    # Usamos st.session_state para manter os dados vivos enquanto o usuário interage
+    # aqui fica mais ou menos a inicialização
     if 'pessoas' not in st.session_state:
         st.session_state.pessoas = []
     if 'n_pessoas' not in st.session_state:
@@ -26,7 +24,7 @@ def main():
     if 'step' not in st.session_state:
         st.session_state.step = 'input_n'
 
-    # --- Passo 1: Inserir N pessoas ---
+    # aqui é pra colocar onumero de pessoas 
     if st.session_state.step == 'input_n':
         st.header("1. Quantidade de Pessoas")
         
@@ -37,7 +35,7 @@ def main():
             st.session_state.step = 'input_data'
             st.experimental_rerun() # Recarrega para ir para o próximo passo
 
-    # --- Passo 2: Inserir dados individuais ---
+    # aqui coloca os dados individuais
     elif st.session_state.step == 'input_data':
         current_person_index = len(st.session_state.pessoas) + 1
 
@@ -60,15 +58,15 @@ def main():
                     else:
                         st.error("Por favor, preencha todos os campos corretamente.")
         else:
-            # Todos os dados foram coletados, passar para resultados
+            # Todos os dados foram coletados pra poder passar os resultados
             st.session_state.step = 'results'
             st.experimental_rerun()
 
-    # --- Passo 3: Exibir Resultados ---
+    #aqui mostra os resulatdos
     elif st.session_state.step == 'results':
         st.header("3. Resultados Finais")
 
-        # Processamento usando Python puro
+        # Processamento aqui dos cara
         altura_media, porcentagem_menor_16, nomes_menor_16_lista = calcular_estatisticas(st.session_state.pessoas)
         nomes_menor_16_str = ", ".join(nomes_menor_16_lista)
 
@@ -89,3 +87,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    #ai deu pra fzer no streamli pra poder ficar bala
