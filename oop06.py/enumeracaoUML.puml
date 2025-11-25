@@ -1,0 +1,10 @@
+@startuml EnumeraçaoUML
+enum Estados_pedido
+{
+    Pagamento_pendente = 0 
+    Precessamneto = 1
+    Enviado = 2
+    Entregue = 3
+    Cancelado = 4
+}
+@enduml
